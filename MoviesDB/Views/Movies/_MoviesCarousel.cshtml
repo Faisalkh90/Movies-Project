@@ -13,6 +13,10 @@
     object-fit: cover;
     object-position: center;
 }
+
+
+
+
 </style>
 <div class="home home--static">
     <div class="home__carousel owl-carousel" id="flixtv-hero">
@@ -28,7 +32,7 @@
                     <h2>@item.Title</h2>
                     <ul>
 
-                        <li>@item.Ent_Genre.FirstOrDefault().Genres.Name</li>
+                        @*<li>@item.Ent_Genre.FirstOrDefault().Genres.Name</li>*@
                         <li>@item.Release_Year</li>
                     </ul>
                 </div>
@@ -44,3 +48,34 @@
     </div>
 
 
+<script>
+   
+   document.getElementById("flixtv-hero").owlCarousel({
+        loop: true,
+        margin: 0,
+        nav: true,
+        dots: false,
+        autoplay: true,
+        autoplayTimeout: 100,
+        autoplayHoverPause: true,
+        navText: ['<i class="icon ion-ios-arrow-back"></i>', '<i class="icon ion-ios-arrow-forward"></i>'],
+        responsive: {
+            0: {
+                items: 1
+            },
+            576: {
+                items: 2
+            },
+            768: {
+                items: 3
+            },
+            992: {
+                items: 4
+            },
+            1200: {
+                items: 5
+            }
+        }
+    }); 
+
+</script>
