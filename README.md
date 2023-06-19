@@ -14,7 +14,7 @@ To get started with the project, follow these steps:
 The project uses Entity Framework to interact with a SQL Server database.
 
 
-![Database Schema](images/)
+![Database Schema](images/DatabaseSchema.png)
 
 ## Features
 
@@ -22,7 +22,7 @@ The MoviesDB project includes the following features:
 
 - A home page that displays a list of all movies in the database.
 - A details page that displays information about a specific movie.
-- A create page that allows admin to add new movies to the database.
+- A create page that allows the admin to add new movies to the database.
 - Search functionality that allows users to search for movies by title or genre.
 - Permission functionality that allows the admin to accept new users.
 
@@ -30,17 +30,17 @@ The MoviesDB project includes the following features:
 ## Screenshots
 Here are some screenshots of the Movies database application:
 
-- Home page showing a list of movies:
+- A home page showing a list of movies:
 
-![homepage](images/)
+![homepage](images/HomePage.png)
 
 - Search page allowing users to search for movies by title:
 
-![search](images/)
+![search](images/SearchBar.png)
 
-- Add new movie page:
+- List of users:
 
-![addMovie](images/)
+![addMovie](images/ListOfUsers.png)
 
 
 ## Technologies Used
