@@ -138,6 +138,38 @@
                 });
             });
         });
+         $(document).ready(function () {
+            $('.activate-user').click(function () {
+                console.log("test")
+                // Send AJAX request to the Account Controller
+                /*debugger;*/
+                var userId = $(this).data("userid");
+                var isActivated = $(this).data("isactivated");
+                $.ajax({
+                    url: '@Url.Action("ActivateOrDeactivateUser", "Account")',
+                    type: 'POST',
+                    data: { userId: userId, isActivated: isActivated },
+                    success: function (response) {
+                        // Refresh the page or perform any other necessary actions
+                        // alert('User activated successfully!');
+                        location.reload(); // Refresh the page
+                    },
+                    error: function (xhr, status, error) {
+                        // Handle error response here
+                        // For example, display an error message
+                        alert('Error activating user: ' + error);
+                    }
+                });
+            });
+         });
+
+
+        $(document).ready(function () {
+            $('.sidebar__nav-link').click(function () {
+                $('.sidebar__nav-link').removeClass('sidebar__nav-link--active');
+                $(this).addClass('sidebar__nav-link--active');
+            });
+        });
 
     </script>
 
