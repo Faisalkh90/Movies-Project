@@ -16,6 +16,16 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>*@
 
+
+    <style>
+
+
+        .mfp-container {
+            height: 35% !important;
+        }
+      
+
+    </style>
    
 </head>
 
@@ -195,32 +205,35 @@
 
 
 $(document).ready(function () {
-  $('.activate-user').click(function (e) {
+    $('.activate-user').click(function (e) {
+        var userId = $(this).data("userid");
+        var isActivated = $(this).data("isactivated");
     // Add the HTML content to the page
-    $('body').prepend(`
-      <div class="at mfp-bg my-mfp-zoom-in mfp-ready" id = "popup1"></div>
-      <div class="at mfp-wrap mfp-close-btn-in mfp-auto-cursor my-mfp-zoom-in mfp-ready" id = "popup2" tabindex="-1" style="overflow: hidden auto; ">
-        <div class="mfp-container mfp-inline-holder">
-          <div class="mfp-content">
-            <div id="modal-status" class="zoom-anim-dialog modal">
-              <h6 class="modal__title">Status change</h6>
-              <p class="modal__text">Are you sure you want to immediately change the status?</p>
-              <div class="modal__btns">
-                <button class="modal__btn modal__btn--apply" type="button">Apply</button>
-                <button class="modal__btn modal__btn--dismiss cancel-button" type="button">Dismiss</button>
-              </div>
-              <button title="Close (Esc)" type="button" class="mfp-close">×</button>
-            </div>
+      $('body').append(`
+  <div class="popup-container">
+  <div class="at mfp-bg my-mfp-zoom-in mfp-ready" id="popup1"></div>
+  <div class="at mfp-wrap mfp-close-btn-in mfp-auto-cursor my-mfp-zoom-in mfp-ready" id="popup2" tabindex="-1" style="overflow: hidden auto;">
+    <div class="mfp-container mfp-inline-holder">
+      <div class="mfp-content">
+        <div id="modal-status" class="zoom-anim-dialog modal">
+          <h6 class="modal__title">Status change</h6>
+          <p class="modal__text">Are you sure you want to immediately change the status?</p>
+          <div class="modal__btns">
+            <button class="modal__btn modal__btn--apply" type="button">Apply</button>
+            <button class="modal__btn modal__btn--dismiss cancel-button" type="button">Dismiss</button>
           </div>
+          <button title="Close (Esc)" type="button" class="mfp-close">×</button>
         </div>
       </div>
+    </div>
+  </div>
+</div>
     `);
 
     // Handle the "Apply" button click
       $('.modal__btn--apply').click(function () {
           console.log("apply btn");
-          var userId = $(this).data("userid");
-          var isActivated = $(this).data("isactivated");
+         
           console.log("apply btn");
 
           $.ajax({
